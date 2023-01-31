@@ -10,6 +10,7 @@ defaultContentLanguage = "en"
 enableRobotsTXT = true
 paginate = 11
 
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
