@@ -1,0 +1,97 @@
+.home {
+    width: 100%;
+    height: 100%;
+    max-width: 80rem;
+    margin: 1rem auto;
+
+    @media only screen and (max-width: 768px) {
+        width: 90%;
+    }
+
+    .intro {
+        margin-top: 0.5rem;
+        float: left;
+
+        a {
+            text-decoration-color: transparent;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-decoration-color: $text-decoration-intro-color;
+            text-decoration-skip-ink: none;
+            text-decoration-thickness: 1rem;
+            text-underline-offset: -0.5rem;
+            transition: .3s;
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-size: 4.2rem;
+            line-height: 4.6rem;
+
+            @media only screen and (max-width: 768px) {
+                font-size: 2.2rem;
+                line-height: 2.6rem;
+                margin-top: 0;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            margin-top: 2rem;
+            float: none;
+            width: 100%;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .name {
+            background: linear-gradient(19deg,#682a37,#d9325b,#d42b9c,#8838f0,#a051f6);
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+    }
+
+    .avatar {
+        width: 30%;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            height: 19rem;
+            border-radius: 33%;
+
+            @media only screen and (max-width: 768px) {
+                margin-top: 2rem;
+                height: 14rem;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+    }
+
+    .featured {
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        .featured-single {
+        border-top: 1px dashed $gray-600;
+
+        h4 {
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+        }
+    }
+}
+

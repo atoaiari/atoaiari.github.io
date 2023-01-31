@@ -1,0 +1,109 @@
+baseURL = "https://atoaiari.github.io/"
+# title = "https://atoaiari.github.io/"
+# theme = "hugo-theme-ladder"
+license = "MIT"
+# licenselink = "https://github.com/guangzhengli/hugo-theme-ladder/blob/master/LICENSE"
+# description = "A fast, clean Hugo theme"
+homepage = "https://atoaiari.github.io/"
+defaultContentLanguage = "en"
+# googleAnalytics = "G-7E4JNTL3ES"
+# enableRobotsTXT = true
+# paginate = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+# brand = "HOME"
+# avatarURL = "/images/Andrea_Toaiari.jpg"
+# author = "Andrea Toaiari"
+# authorDescription = "A clean, fast hugo theme focused on Reading"
+# favicon = "/images/arcadecat.png"
+darkModeTheme = "data-dark-mode"
+
+  [params.options]
+  showDarkMode = true
+  enableImgZooming = true
+  enableMultiLang = false
+
+[params.comments.giscus]
+enable = false
+repo = "guangzhengli/blog-comments"
+repo_id = "R_kgDOHtsjNw"
+category = "Announcements"
+category_id = "DIC_kwDOHtsjN84CQr99"
+mapping = "pathname"
+position = "top"
+lang = "en"
+
+[params.comments.utteranc]
+enable = false
+repo = "guangzhengli/blog-comments"
+issueTerm = "pathname"
+
+# [params.analytics.google]
+# SiteVerificationTag = "RL6kP6-6yjRPyYGLeqBQ2JIX6QQAz7A6gHZb7bHlZnU"
+
+[params.analytics.umami]
+enable = false
+website_id = "24349452-bff6-4e96-93bf-6c764e191b26"
+url = "https://umami-ochre-nu.vercel.app/hugo-ladder.js"
+
+# [params.guestbook]
+# title = "Guestbook"
+# description = "Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!!!"
+
+# [[params.social]]
+# name = "GitHub"
+# pre = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>'
+# url = "https://github.com/atoaiari"
+
+# [[params.social]]
+# name = "Twitter"
+# pre = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>'
+# url = "https://twitter.com/andrea_toaiari"
+
+# [[params.social]]
+# name = "Google Scholar"
+# pre = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M 14.660156 3.25 L 3.386719 10.308594 L 11.125 10.308594 C 11.097656 10.417969 11.050781 10.515625 11.027344 10.625 C 10.960938 10.964844 10.910156 11.34375 10.910156 11.734375 C 10.910156 16.773438 16.054688 16.207031 16.054688 16.207031 L 16.054688 17.492188 C 16.054688 18.011719 16.734375 17.832031 16.816406 18.890625 C 16.476562 18.890625 9.691406 18.695312 9.691406 23.277344 C 9.691406 27.882812 15.679688 27.65625 15.679688 27.65625 C 15.679688 27.65625 22.59375 27.964844 22.59375 22.273438 C 22.597656 18.871094 18.636719 17.765625 18.636719 16.398438 C 18.636719 15.015625 21.621094 14.609375 21.621094 11.375 C 21.621094 9.960938 21.523438 8.953125 20.890625 8.238281 C 20.84375 8.1875 20.808594 8.152344 20.761719 8.121094 C 20.75 8.109375 20.738281 8.101562 20.726562 8.09375 L 20.898438 8.09375 L 23.816406 5.902344 L 23.816406 8.898438 C 23.816406 8.953125 23.820312 9.007812 23.832031 9.0625 C 23.609375 9.1875 23.429688 9.363281 23.300781 9.585938 C 23.171875 9.808594 23.109375 10.050781 23.113281 10.308594 L 23.113281 11.722656 C 23.109375 11.910156 23.144531 12.09375 23.214844 12.269531 C 23.285156 12.445312 23.386719 12.597656 23.515625 12.734375 C 23.648438 12.867188 23.804688 12.972656 23.976562 13.042969 C 24.152344 13.117188 24.332031 13.152344 24.519531 13.152344 C 24.710938 13.152344 24.890625 13.117188 25.066406 13.042969 C 25.238281 12.972656 25.390625 12.867188 25.523438 12.734375 C 25.65625 12.597656 25.757812 12.445312 25.828125 12.269531 C 25.898438 12.09375 25.933594 11.910156 25.929688 11.722656 L 25.929688 10.308594 C 25.933594 10.050781 25.871094 9.808594 25.742188 9.585938 C 25.613281 9.363281 25.433594 9.1875 25.207031 9.0625 C 25.21875 9.007812 25.226562 8.953125 25.226562 8.898438 L 25.226562 4.839844 L 27.339844 3.25 Z M 15.632812 7.5625 C 16.039062 7.542969 16.445312 7.640625 16.835938 7.863281 C 17.125 8.007812 17.402344 8.21875 17.644531 8.480469 C 18.148438 8.984375 18.570312 9.714844 18.796875 10.578125 C 19.332031 12.625 18.636719 14.597656 17.191406 14.96875 C 15.765625 15.375 14.171875 14.039062 13.621094 12.007812 C 13.378906 11.015625 13.410156 10.054688 13.6875 9.292969 C 13.691406 9.28125 13.695312 9.273438 13.699219 9.265625 C 13.703125 9.261719 13.710938 9.257812 13.714844 9.253906 C 13.792969 8.953125 13.921875 8.679688 14.082031 8.457031 C 14.371094 8.035156 14.753906 7.746094 15.226562 7.617188 C 15.363281 7.585938 15.496094 7.566406 15.632812 7.5625 Z M 16.183594 19.75 C 18.566406 19.570312 20.597656 20.886719 20.746094 22.675781 C 20.84375 24.449219 19.007812 26.027344 16.605469 26.1875 C 14.222656 26.351562 12.160156 25.050781 12.046875 23.277344 C 11.933594 21.492188 13.78125 19.929688 16.183594 19.75 Z M 16.183594 19.75 "/></svg>'
+# pre = '<svg width="20" height="20" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" aria-hidden ="true" role ="img" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.93 2.045c-.547.366-3.22 2.14-5.938 3.945C2.272 7.794.05 9.286.05 9.304c0 .019.136.11.305.2.167.096 2.85 1.583 5.965 3.31l5.656 3.143.144-.074c.082-.04 2.169-1.232 4.642-2.642l4.493-2.568.027 7.947h2.668V9.319l-3.46-2.32c-4.664-3.124-8.392-5.586-8.484-5.606-.045-.008-.527.287-1.076.652M5.355 16.633l.014 2.005 3.31 1.987 3.31 1.982 3.337-2 3.332-2.005V16.62c0-1.092-.013-1.983-.027-1.983s-1.318.782-2.9 1.741l-3.306 1.996-.431.256-1.32-.791a604.12 604.12 0 0 1-3.286-1.979l-2.005-1.21c-.024-.008-.032.883-.027 1.983" /></svg>'
+# url = "https://scholar.google.com/citations?user=mDMfbggAAAAJ&hl=it"
+
+[languages.en]
+languageName = "EN"
+
+# [[languages.en.menu.main]]
+# name = "home"
+# url = "/"
+# weight = 1
+
+# [[languages.en.menu.main]]
+# name = "Blog"
+# url = "/blog"
+# weight = 1
+
+# [[languages.en.menu.main]]
+# name = "Tags"
+# url = "/tags"
+# weight = 2
+
+# [[languages.en.menu.main]]
+# name = "Archive"
+# url = "/archives"
+# weight = 3
+
+# [[languages.en.menu.main]]
+# name = "Guestbook"
+# url = "/guestbook"
+# weight = 4
+
+# [[languages.en.menu.main]]
+# name = "Dashboard"
+# url = "https://umami-ochre-nu.vercel.app/share/o3zAba1V/guangzhengli"
+# weight = 5
+
+[taxonomies]
+series = "series"
+tag = "tags"
