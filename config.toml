@@ -8,7 +8,7 @@ homepage = "https://atoaiari.github.io/"
 defaultContentLanguage = "en"
 # googleAnalytics = "G-7E4JNTL3ES"
 enableRobotsTXT = true
-paginate = 10
+paginate = 11
 
 [markup]
   [markup.goldmark]
