@@ -12,7 +12,7 @@ My research interests range from the broad field of machine learning and neural 
 
 **/news**
 
-[Dic 2022] I'm currently a visiting PhD student at [University of Glasgow](https://www.gla.ac.uk/) in the [Social AI CDT](https://socialcdt.org/), under the supervision of prof. [Alessandro Vinciarelli](https://vinciarelli.net/).
+[Dec. 2022] I'm currently a visiting PhD student at [University of Glasgow](https://www.gla.ac.uk/) in the [Social AI CDT](https://socialcdt.org/), under the supervision of prof. [Alessandro Vinciarelli](https://vinciarelli.net/).
 
 &nbsp;
 
