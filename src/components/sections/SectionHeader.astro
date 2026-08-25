@@ -1,0 +1,34 @@
+---
+const { number, title, side } = Astro.props;
+const justifyClass = side === "right" ? "justify-end" : "justify-start";
+---
+
+<!-- <section class="w-full border-b border-neutral-200 bg-cream-75">
+    <div
+        class=`max-w-4xl mx-auto border-x border-neutral-200 px-8 py-6 flex items-center ${justifyClass} gap-3 text-xs font-mono text-neutral-400`
+    >
+        {side === "right" ?
+            <span class="tracking-wider uppercase">{title}</span>
+            <span>[ {number} ]</span>
+        :
+            <span>[ {number} ]</span>
+            <span class="tracking-wider uppercase">{title}</span>
+        }
+    </div>
+</section> -->
+
+<section class="w-full border-b border-neutral-200 bg-cream-75">
+    <div
+        class=`max-w-4xl mx-auto border-x border-neutral-200 p-6 sm:px-8 flex items-center ${justifyClass} gap-3 text-xs font-mono text-neutral-400`
+    >
+        {side === "right" ?
+            <span class="tracking-wider uppercase">{title}</span>
+            <span>//</span>
+            <span>{number}</span>
+        :
+            <span>{number}</span>
+            <span>//</span>
+            <span class="tracking-wider uppercase">{title}</span>
+        }
+    </div>
+</section>

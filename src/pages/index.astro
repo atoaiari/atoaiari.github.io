@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Landing from "../components/sections/Landing.astro";
+
+const title = "Andrea Toaiari";
+const description = "I'm Andrea Toaiari, a PhD researcher turned freelance AI engineer.";
+---
+
+<Layout title={title} description={description}>
+    <main
+        class="flex min-h-screen flex-col gap-6 bg-cream-50 selection:bg-teal-600 selection:text-cream-50"
+    >
+        <Landing />
+    </main>
+</Layout>

@@ -1,0 +1,81 @@
+---
+import { heroContent } from "../../data/homepage";
+---
+
+<div class="relative">
+    <div
+        class="pointer-events-none absolute top-0 bottom-0 left-1/2 -translate-x-1/2"
+        style="width: 100vw; background: radial-gradient(ellipse 70% 100% at 50% 50%, rgba(208,235,231,0.9) 0%, transparent 70%);"
+    >
+    </div>
+    <section class="bg-dot-pattern relative">
+        <div
+            class="relative mx-auto max-w-7xl border border-cream-200 bg-cream-50"
+        >
+            <div
+                class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-cream-200 lg:min-h-[430px]"
+            >
+                <div
+                    class="col-span-7 px-8 py-7 md:px-16 md:py-14 lg:px-24 lg:py-12 relative flex items-center"
+                >
+                    <div class="crosshair-tl crosshair-tr"></div>
+                    <div class="animate-entry">
+                        <div
+                            class="mb-8 inline-flex items-center border border-cream-200 bg-cream-50 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink-500"
+                        >
+                            <span class="mr-2 h-1.5 w-1.5 bg-teal-600"></span>
+                            {heroContent.badge}
+                        </div>
+                        <h1
+                            class="text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tighter font-medium text-ink-900 mb-8">
+                    
+                            <br />
+                            <span>{heroContent.headingSuffix}</span>
+                        </h1>
+                        <p
+                            class="mb-10 text-lg text-ink-500 leading-relaxed font-light max-w-md"
+                        >
+                            {heroContent.description}
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a
+                                href={heroContent.primaryCta.href}
+                                class="group flex h-14 items-center justify-center bg-ink-900 px-8 text-sm font-medium text-cream-50 transition-colors hover:bg-teal-600"
+                            >
+                                <span>{heroContent.primaryCta.label}</span>
+                                <svg
+                                    class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M5 12h14"></path><path
+                                        d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            <a
+                                href={heroContent.secondaryCta.href}
+                                class="flex h-14 items-center justify-center border border-cream-200 bg-cream-50 px-8 text-sm font-medium text-ink-900 transition-colors hover:bg-cream-100"
+                            >
+                                {heroContent.secondaryCta.label}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="col-span-5 flex flex-col items-center justify-center bg-cream-100/30 relative overflow-hidden min-h-[180px] h-[180px] md:min-h-[220px] md:h-[220px] lg:h-auto lg:min-h-0 lg:self-stretch p-4 md:p-6 lg:p-8"
+                >
+                    <div
+                        class="w-full h-full flex items-center justify-center animate-fade-in"
+                    >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

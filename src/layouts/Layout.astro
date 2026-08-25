@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+import { siteMeta } from "../config/site";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title = siteMeta.title, description = siteMeta.description } =
+    Astro.props;
+---
+
+<!doctype html>
+<html lang={siteMeta.locale}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <title>{title}</title>
+        <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+		<link rel="icon" href="images/favicon.ico" />
+        <script>
+            import Lenis from "lenis";
+
+            const lenis = new Lenis({
+                autoRaf: true,
+                infinite: true,
+                syncTouch: false,
+            });
+        </script>
+    </head>
+    <body>
+        <slot />
+
+        <div id="clone" class="h-screen overflow-hidden">
+            <slot />
+        </div>
+        <!-- <div
+            class="fixed bottom-0 inset-x-0 h-33 z-30 pointer-events-none
+            backdrop-blur-lg
+            mask-[linear-gradient(to_bottom,transparent_0%,black_100%)]
+            [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_100%)]"
+            >
+        </div> -->
+    </body>
+</html>

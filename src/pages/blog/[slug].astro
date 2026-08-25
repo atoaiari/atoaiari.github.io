@@ -1,0 +1,144 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SiteHeader from "../../components/layout/SiteHeader.astro";
+import SiteFooter from "../../components/layout/SiteFooter.astro";
+import { getCollection, render } from "astro:content";
+import { features } from "../../config/site";
+
+export async function getStaticPaths() {
+    if (!features.showBlog) return [];
+    const posts = await getCollection("blog");
+    return posts.map((entry) => ({
+        params: { slug: entry.id },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { tag, date, title, subtitle } = entry.data;
+const { Content } = await render(entry);
+---
+
+<Layout title={`${title} — manyfolds.ai`} description={subtitle}>
+    <SiteHeader />
+
+    <main
+        class="bg-cream-50 px-3 py-3 md:px-4 md:py-4 selection:bg-teal-600 selection:text-cream-50"
+    >
+        <!-- Header -->
+        <div class="mx-auto max-w-7xl border border-cream-200 bg-cream-50">
+            <div class="p-8 md:p-16 lg:p-24 border-b border-cream-200">
+                <div data-animate="fade-up">
+                    <h1
+                        class="text-4xl md:text-5xl tracking-tighter font-medium text-ink-900 leading-tight mb-6 max-w-4xl"
+                    >
+                        {title}
+                    </h1>
+                    <p
+                        class="text-xl text-ink-500 font-light leading-relaxed max-w-2xl"
+                    >
+                        {subtitle}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div
+                class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-cream-200"
+            >
+                <!-- Sidebar -->
+                <div class="lg:col-span-3 p-8 md:p-12 lg:p-16 bg-cream-100/30">
+                    <div class="sticky top-32 space-y-8">
+                        <div>
+                            <span
+                                class="font-mono text-[10px] uppercase tracking-widest text-ink-500 block mb-3"
+                                >Tag</span
+                            >
+                            <span
+                                class="inline-flex border border-cream-200 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink-900"
+                            >
+                                {tag}
+                            </span>
+                        </div>
+                        <div>
+                            <span
+                                class="font-mono text-[10px] uppercase tracking-widest text-ink-500 block mb-3"
+                                >Pubblicato</span
+                            >
+                            <span class="text-sm font-light text-ink-900"
+                                >{date}</span
+                            >
+                        </div>
+                        <div class="border-t border-cream-200 pt-8">
+                            <a
+                                href="/#blog"
+                                class="group inline-flex items-center text-xs font-mono uppercase tracking-widest text-ink-500 hover:text-ink-900 transition-colors"
+                            >
+                                <svg
+                                    class="mr-2 h-3 w-3 transition-transform group-hover:-translate-x-1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M19 12H5"></path><path
+                                        d="m12 19-7-7 7-7"></path>
+                                </svg>
+                                Tutti gli articoli
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article content -->
+                <div class="lg:col-span-9 p-8 md:p-12 lg:p-16">
+                    <div class="max-w-2xl space-y-8 [&_p]:text-base [&_p]:text-ink-500 [&_p]:font-light [&_p]:leading-relaxed [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:tracking-tighter [&_h2]:font-medium [&_h2]:text-ink-900 [&_h2]:pt-4 [&_figure]:my-10 [&_figure_img]:w-full [&_figure_img]:border [&_figure_img]:border-cream-200 [&_figure_img]:object-cover [&_figcaption]:mt-3 [&_figcaption]:font-mono [&_figcaption]:text-[10px] [&_figcaption]:uppercase [&_figcaption]:tracking-widest [&_figcaption]:text-ink-400 [&_img]:w-full [&_img]:border [&_img]:border-cream-200 [&_em]:not-italic">
+                        <Content />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to blog / CTA -->
+        <div class="mx-auto max-w-7xl mt-6 border border-cream-200 bg-cream-50">
+            <div
+                class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-8 md:p-12 lg:p-16"
+            >
+                <div>
+                    <p
+                        class="font-mono text-[10px] uppercase tracking-widest text-ink-500 mb-2"
+                    >
+                        Vuoi saperne di più?
+                    </p>
+                    <p class="text-xl font-medium tracking-tight text-ink-900">
+                        Parliamo del tuo progetto.
+                    </p>
+                </div>
+                <a
+                    href="/#contact"
+                    class="group flex h-12 shrink-0 items-center justify-center bg-ink-900 px-8 text-sm font-medium text-cream-50 transition-colors hover:bg-teal-600"
+                >
+                    <span>Prenota una chiamata</span>
+                    <svg
+                        class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"
+                        ></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <SiteFooter />
+</Layout>

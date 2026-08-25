@@ -1,0 +1,36 @@
+---
+const {from, to, title, subtitle} = Astro.props;
+---
+
+<!-- Interactive Experience Row with Hover Effect -->
+<div class="relative overflow-hidden group">
+    <!-- Animated sliding background overlay -->
+    <div
+        class="absolute inset-0 bg-neutral-100 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out pointer-events-none"
+    >
+    </div>
+
+    <div
+        class="relative z-10 grid grid-cols-[80px_1fr] sm:grid-cols-[175px_1fr] sm:divide-y-0 divide-x divide-neutral-200"
+    >
+        <div
+            class="flex flex-col sm:flex-row sm:gap-2 items-center justify-center font-mono text-xs text-neutral-400 p-6 sm:px-8"
+        >
+            <span class="hidden sm:inline">[</span> 
+            <span>{from}</span> 
+            <span>-</span> 
+            <span>{to}</span>
+            <span class="hidden sm:inline">]</span>
+        </div>
+        <div class="p-6 sm:px-8 flex items-center justify-between">
+            <div>
+                <span class="font-medium text-neutral-900"
+                    >{title}</span
+                >
+                <span class="text-neutral-500"
+                    >{subtitle}</span
+                >
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+---
+const {category, title, subtitle} = Astro.props;
+---
+
+<div
+    class="group relative overflow-hidden p-6 sm:px-8 flex flex-col justify-between min-h-[180px]"
+>
+    <!-- Corrected Hover Sweep Layer -->
+    <div
+        class="absolute inset-0 bg-neutral-100 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out pointer-events-none"
+    >
+    </div>
+
+    <!-- Top metadata -->
+    <div
+        class="relative z-10 flex items-center justify-end sm:justify-between text-xs font-mono text-neutral-400"
+    >
+        <span>[ FEATURED ]</span>
+        <!-- <span
+            class="group-hover:translate-x-1 transition-transform text-neutral-900"
+            >→</span
+        > -->
+    </div>
+
+    <!-- Bottom content -->
+    <div class="relative z-10 mt-6">
+        <span class="text-xs font-mono text-teal-700 font-medium tracking-wide uppercase">
+            {category}
+        </span>
+        <h3 class="text-lg font-medium text-neutral-900 mt-1">
+            {title}
+        </h3>
+        <p class="text-xs text-neutral-500 mt-2 leading-relaxed">
+            {subtitle}
+        </p>
+    </div>
+</div>
