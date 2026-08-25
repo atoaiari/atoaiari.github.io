@@ -21,29 +21,51 @@ const { title = siteMeta.title, description = siteMeta.description } =
         <meta property="og:description" content={description} />
         <title>{title}</title>
         <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-		<link rel="icon" href="images/favicon.ico" />
+        <link rel="icon" href="images/favicon.ico" />
         <script>
             import Lenis from "lenis";
 
-            const lenis = new Lenis({
-                autoRaf: true,
-                infinite: true,
-                syncTouch: false,
-            });
+            const md = window.matchMedia("(min-width: 768px)");
+            let lenis = null;
+
+            function toggleLenis(e) {
+                if (e.matches) {
+                    // Enable Lenis on desktop
+                    if (!lenis) {
+                        lenis = new Lenis({
+                            autoRaf: true,
+                            infinite: true,
+                            syncTouch: false,
+                        });
+                    }
+                } else {
+                    // Destroy Lenis when resized below 768px
+                    if (lenis) {
+                        lenis.destroy();
+                        lenis = null;
+                    }
+                }
+            }
+
+            // Initial check on load
+            toggleLenis(md);
+
+            // React to viewport size changes in real-time
+            md.addEventListener("change", toggleLenis);
         </script>
     </head>
     <body>
         <slot />
 
-        <div id="clone" class="h-screen overflow-hidden">
+        <div id="clone" class="hidden md:block h-screen overflow-hidden">
             <slot />
         </div>
         <div
-            class="fixed bottom-0 inset-x-0 h-33 z-30 pointer-events-none
+            class="hidden sm:block fixed bottom-0 inset-x-0 h-33 z-30 pointer-events-none
             backdrop-blur-lg
             mask-[linear-gradient(to_bottom,transparent_0%,black_100%)]
             [-webkit-mask-image:linear-gradient(to_bottom,transparent_0%,black_100%)]"
-            >
+        >
         </div>
     </body>
 </html>
